@@ -8,7 +8,7 @@ Open a random door to reveal a new story and illustration. Watch the night move 
 
 - Eight original, bite-sized horror stories. Each visit to **Summon another story** picks a different one.
 - Locally generated SVG scenes—no image service, API key, external asset host, or tracking script.
-- Slow-moving bats and pumpkins, a foreground spider, drifting fog, and scroll-triggered reveals.
+- A flying vampire, slow-moving bats and pumpkins, a foreground spider, drifting fog, and scroll-triggered reveals.
 - A motion pause button and support for the device's reduced-motion setting.
 - Responsive layout, keyboard focus styles, skip navigation, and screen-reader announcements.
 - No build step and no runtime dependencies.
