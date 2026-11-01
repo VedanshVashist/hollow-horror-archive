@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#11100f" />
+    <meta
+      name="description"
+      content="Step inside The Hollow: an interactive midnight archive of original ghost stories and hand-drawn haunted scenes."
+    />
+    <meta property="og:title" content="The Hollow — A Midnight Story Archive" />
+    <meta
+      property="og:description"
+      content="Every knock has a story. Open a random door into the midnight archive."
+    />
+    <meta property="og:type" content="website" />
+    <title>The Hollow — A Midnight Story Archive</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the stories</a>
+    <div class="top-rule" aria-hidden="true"><span id="read-progress"></span></div>
+
+    <div class="hauntings" aria-hidden="true">
+      <span class="bat-crossing">
+        <svg viewBox="0 0 100 52" focusable="false">
+          <path d="M50 20C42 3 23 2 8 8c10 5 11 14 11 22-7-7-14-9-19-8 7 6 12 14 18 20 10-2 23-9 32-19 9 10 22 17 32 19 6-6 11-14 18-20-5-1-12 1-19 8 0-8 1-17 11-22C77 2 58 3 50 20Z" fill="currentColor" />
+          <path d="M50 15v21" stroke="#17120f" stroke-width="2" />
+          <circle cx="46" cy="20" r="1.5" fill="#d5a44b" />
+          <circle cx="54" cy="20" r="1.5" fill="#d5a44b" />
+        </svg>
+      </span>
+      <span class="pumpkin-crossing pumpkin-crossing-one">
+        <svg viewBox="0 0 100 82" focusable="false">
+          <path d="M49 18c-20-12-43 4-40 28 3 23 21 32 41 30 20 2 38-7 41-30 3-24-20-40-40-28-1-8-6-11-11-13 0 6 2 10 9 13Z" fill="currentColor" />
+          <path d="M48 20c-6 10-8 30-3 54M56 21c6 10 8 29 4 53" fill="none" stroke="#25150e" stroke-width="2" opacity=".48" />
+          <path d="M37 41 45 44 37 48ZM64 41 56 44 64 48Z" fill="#20120e" />
+          <path d="M42 57q8-7 16 0l-3 7h-10Z" fill="#20120e" />
+          <path d="M50 8c1-7 8-8 14-6-2 8-8 11-14 9" fill="#859060" />
+        </svg>
+      </span>
+      <span class="pumpkin-crossing pumpkin-crossing-two">
+        <svg viewBox="0 0 100 82" focusable="false">
+          <path d="M49 18c-20-12-43 4-40 28 3 23 21 32 41 30 20 2 38-7 41-30 3-24-20-40-40-28-1-8-6-11-11-13 0 6 2 10 9 13Z" fill="currentColor" />
+          <path d="M48 20c-6 10-8 30-3 54M56 21c6 10 8 29 4 53" fill="none" stroke="#25150e" stroke-width="2" opacity=".48" />
+          <path d="M37 41 45 44 37 48ZM64 41 56 44 64 48Z" fill="#20120e" />
+          <path d="M42 57q8-7 16 0l-3 7h-10Z" fill="#20120e" />
+          <path d="M50 8c1-7 8-8 14-6-2 8-8 11-14 9" fill="#859060" />
+        </svg>
+      </span>
+    </div>
+
+    <div class="spider-drop" aria-hidden="true">
+      <span class="spider-thread"></span>
+      <svg class="spider" viewBox="0 0 100 112" focusable="false">
+        <g fill="none" stroke="#171411" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M39 43 23 29 12 31M36 50 18 45 9 52M36 57 17 63 11 74M41 62 28 78 24 91" />
+          <path d="m61 43 16-14 11 2m-8 14 18-5 9 7M64 57l19 6 6 11M59 62l13 16 4 13" />
+        </g>
+        <ellipse cx="50" cy="52" rx="15" ry="17" fill="#201b18" />
+        <ellipse cx="50" cy="78" rx="20" ry="23" fill="#171411" />
+        <circle cx="44" cy="50" r="2.7" fill="#a9432e" />
+        <circle cx="56" cy="50" r="2.7" fill="#a9432e" />
+        <path d="m42 91-7 10m23-10 7 10" stroke="#171411" stroke-width="3" stroke-linecap="round" />
+        <ellipse cx="43" cy="70" rx="5" ry="3" fill="#352a24" opacity=".8" />
+      </svg>
+    </div>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="The Hollow home">
+          <span class="wordmark-seal" aria-hidden="true">
+            <svg viewBox="0 0 36 36" focusable="false">
+              <path d="M18 3 31 10.5v15L18 33 5 25.5v-15L18 3Z" fill="none" stroke="currentColor" />
+              <path d="M11 24V12h3v4.5h8V12h3v12h-3v-4.7h-8V24h-3Z" fill="currentColor" />
+              <circle cx="18" cy="7.5" r="1.2" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="wordmark-type">THE HOLLOW<span>·</span></span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#archive">The archive <span>01</span></a>
+          <a href="#about">After dark <span>02</span></a>
+          <a href="#contribute">Contribute <span>03</span></a>
+        </nav>
+
+        <button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false">
+          <span class="motion-dot" aria-hidden="true"></span>
+          <span id="motion-label">Motion on</span>
+        </button>
+      </header>
+
+      <main id="main">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> An anthology for the after-hours</p>
+            <h1 id="hero-title">Every knock<br />has a <em>story.</em></h1>
+            <p class="hero-description">
+              The lights are on. The house is empty. Open the archive and find out what came home with you.
+            </p>
+            <button class="button button-primary" id="hero-reveal" type="button">
+              <span class="button-mark" aria-hidden="true">✳</span>
+              Open a random door
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <div class="hero-note">
+              <span class="note-icon" aria-hidden="true">☾</span>
+              <p>Best read with one lamp left on.<br /><span>No jump scares. Just the slow kind.</span></p>
+            </div>
+          </div>
+
+          <div class="hero-art-wrap">
+            <div class="art-topline">
+              <span><span class="live-dot" aria-hidden="true"></span> THE MIDNIGHT ARCHIVE</span>
+              <span id="scene-number">PLATE 001 / 008</span>
+            </div>
+            <figure class="scene-card" id="scene-card">
+              <div class="scene-illustration" id="scene-illustration" aria-label="An illustrated haunted manor beneath a pale moon" role="img"></div>
+              <span class="scene-stamp" aria-hidden="true">H<br />—<br />31</span>
+              <figcaption class="scene-caption">
+                <span class="caption-label">TONIGHT'S SIGHTING</span>
+                <span class="caption-title" id="scene-caption">A house with all its windows awake.</span>
+              </figcaption>
+            </figure>
+            <div class="art-bottomline">
+              <span>35° 41' 22.1" N &nbsp; 139° 41' 30.2" E</span>
+              <span>DO NOT ANSWER THE THIRD KNOCK</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="ticker" aria-label="A collection of eight original midnight stories">
+          <div class="ticker-track" aria-hidden="true">
+            <span>Eight original hauntings</span><i>✳</i><span>One open door</span><i>✳</i><span>Stories from the Hollow</span><i>✳</i><span>Eight original hauntings</span><i>✳</i><span>One open door</span><i>✳</i><span>Stories from the Hollow</span><i>✳</i>
+          </div>
+        </div>
+
+        <section class="archive-section section-pad" id="archive" aria-labelledby="story-title">
+          <div class="archive-heading reveal-on-scroll">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Filed at an hour that doesn't exist</p>
+              <h2>Some things follow<br />you <em>home.</em></h2>
+            </div>
+            <p class="archive-aside">The archive changes every time you look away. Go on, pick a door.</p>
+          </div>
+
+          <article class="story-card reveal-on-scroll">
+            <div class="story-index">
+              <span class="index-label">CASE FILE</span>
+              <span class="index-number" id="story-number">001</span>
+              <span class="index-rule"></span>
+              <span class="index-note">UNSOLVED<br />SINCE ALWAYS</span>
+              <span class="index-seal" aria-hidden="true">✳</span>
+            </div>
+            <div class="story-content">
+              <div class="story-meta">
+                <span id="story-location">GREYWICK, MAINE</span>
+                <span class="meta-divider" aria-hidden="true"></span>
+                <time id="story-time" datetime="03:17">3:17 AM</time>
+              </div>
+              <h3 id="story-title">The House That Listened</h3>
+              <p class="story-copy" id="story-copy">
+                The first rule was not to answer the knocking. The second was not to count it. By the third night, Mara understood the house wasn't knocking at all. It was using her own hands to tap from the inside of the walls.
+              </p>
+              <div class="story-actions">
+                <button class="button button-primary" id="next-story" type="button">
+                  <span class="button-mark" aria-hidden="true">✳</span>
+                  Summon another story
+                  <span class="button-arrow" aria-hidden="true">↗</span>
+                </button>
+                <button class="button button-quiet" id="copy-story" type="button">
+                  <span aria-hidden="true">↗</span> Keep this one
+                </button>
+              </div>
+            </div>
+            <div class="story-corner-note" aria-hidden="true">
+              <span>IF FOUND</span><span>LEAVE<br />UNREAD</span>
+            </div>
+          </article>
+          <p class="screen-reader-only" id="announcement" aria-live="polite" aria-atomic="true"></p>
+        </section>
+
+        <section class="about-section section-pad" id="about" aria-labelledby="about-title">
+          <div class="about-art reveal-on-scroll" aria-hidden="true">
+            <div class="about-moon"></div>
+            <div class="about-tree about-tree-left"></div>
+            <div class="about-tree about-tree-right"></div>
+            <div class="about-figure"><span></span><i></i></div>
+            <span class="about-coordinates">THE HOLLOW / EST. 00:00</span>
+            <span class="about-art-stamp">H<br />—<br />31</span>
+          </div>
+          <div class="about-copy reveal-on-scroll">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A note from the caretaker</p>
+            <h2 id="about-title">A small archive<br />of <em>big shadows.</em></h2>
+            <p>
+              The Hollow is a collection of original, bite-sized ghost stories and strange little scenes. Every illustration is drawn in SVG right here in the project—no image APIs, no tracking, no lost signal required.
+            </p>
+            <p>
+              The archive is open source. Bring a new haunting, a better way to read in the dark, or just a curious mind. The door sticks, but it opens.
+            </p>
+            <a class="text-link" href="#contribute">Find your way in <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+
+        <section class="contribute-section section-pad" id="contribute" aria-labelledby="contribute-title">
+          <div class="contribute-heading reveal-on-scroll">
+            <p class="eyebrow"><span class="eyebrow-line"></span> Leave a light on for the next person</p>
+            <div class="contribute-title-row">
+              <h2 id="contribute-title">The Hollow is<br /><em>open to everyone.</em></h2>
+              <p>New to open source? Perfect. The kindest contributions start with curiosity.</p>
+            </div>
+          </div>
+          <div class="contribution-grid reveal-on-scroll">
+            <article class="contribution-card">
+              <span class="contribution-number">01 / WRITE</span>
+              <h3>Add a haunting</h3>
+              <p>Write an original short story and give a new file a place in the archive.</p>
+              <span class="contribution-ghost" aria-hidden="true">◌</span>
+            </article>
+            <article class="contribution-card">
+              <span class="contribution-number">02 / DRAW</span>
+              <h3>Make a new scene</h3>
+              <p>Build a hand-drawn SVG world—a lighthouse, a back stair, a very wrong moon.</p>
+              <span class="contribution-ghost" aria-hidden="true">✳</span>
+            </article>
+            <article class="contribution-card">
+              <span class="contribution-number">03 / CARE</span>
+              <h3>Improve the night</h3>
+              <p>Make a page easier to read, work better on a phone, or kinder for everyone.</p>
+              <span class="contribution-ghost" aria-hidden="true">☾</span>
+            </article>
+          </div>
+          <div class="contribute-foot reveal-on-scroll">
+            <p>Small, thoughtful changes make the best ghost stories.</p>
+            <a class="button button-outline" href="CONTRIBUTING.md">Read the contribution guide <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="wordmark footer-wordmark" href="#top" aria-label="The Hollow, back to top">
+          <span class="wordmark-seal" aria-hidden="true">H</span>
+          <span class="wordmark-type">THE HOLLOW<span>·</span></span>
+        </a>
+        <p>Made after midnight, for the curious.</p>
+        <a class="footer-top" href="#top">Back to the surface <span aria-hidden="true">↑</span></a>
+        <span class="footer-copyright">© 2026 · OPEN SOURCE, CLOSED CASKET</span>
+      </footer>
+    </div>
+  </body>
+</html>
