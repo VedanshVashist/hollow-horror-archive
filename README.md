@@ -25,6 +25,10 @@ python -m http.server 4173
 
 Then visit [http://localhost:4173](http://localhost:4173). Stop the server with `Ctrl+C`.
 
+## Hacktoberfest
+
+The Hollow welcomes open-source contributions all year, including during Hacktoberfest. The event format changes over time; for 2026, pull requests no longer count toward rewards. Check the [official Hacktoberfest rules](https://hacktoberfest.com/questions/) for the current activities and eligibility. Contributions here are welcome whether or not they qualify for an event activity.
+
 ## Deploy to Vercel
 
 1. Push this repository to GitHub.
@@ -54,9 +58,11 @@ Keep stories original, keep the page usable without motion, and keep the project
 | `script.js` | Story selection and SVG scene generation |
 | `assets/vampires/` | Locally bundled vampire artwork used in scroll sightings |
 | `ASSETS.md` | Artwork sources and license information |
+| `LICENSE` | MIT license for the project's original code and materials |
+| `HACKTOBERFEST_DEV_POST.md` | Copy-ready DEV post draft; replace the repository and demo links before publishing |
 | `favicon.svg` | Project icon |
 | `vercel.json` | Static Vercel deployment settings |
 
 ## License
 
-The project is released under the [MIT License](LICENSE).
+The project's source code and original project materials are released under the [MIT License](LICENSE). The bundled third-party artwork has separate terms listed in [ASSETS.md](ASSETS.md); it is not relicensed under the project MIT license.
