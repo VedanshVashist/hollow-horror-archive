@@ -379,12 +379,88 @@ if ("IntersectionObserver" in window) {
 }
 
 const progressBar = document.getElementById("read-progress");
+const vampireSightings = document.getElementById("vampire-sightings");
+const heroCopy = document.querySelector(".hero-copy");
+const heroArt = document.querySelector(".hero-art-wrap");
+const vampireImages = [
+  {
+    src: "assets/vampires/max-schreck.jpg",
+    kind: "portrait",
+    caption: "COUNT ORLOK / FRAME 01",
+  },
+  {
+    src: "assets/vampires/orlok-shadow.svg",
+    kind: "shadow",
+    caption: "THE SHADOW / FRAME 02",
+  },
+];
 let progressPending = false;
+let lastSightingScroll = window.scrollY;
+let lastSightingAt = 0;
+let lastSightingIndex = -1;
+
+function summonVampireSighting() {
+  if (page.dataset.motion !== "on" || reducedMotion.matches) return;
+
+  let imageIndex = Math.floor(Math.random() * vampireImages.length);
+  if (vampireImages.length > 1 && imageIndex === lastSightingIndex) {
+    imageIndex = (imageIndex + 1) % vampireImages.length;
+  }
+  lastSightingIndex = imageIndex;
+
+  const image = vampireImages[imageIndex];
+  const isSmallScreen = window.innerWidth < 560;
+  const width = Math.round(isSmallScreen ? 104 + Math.random() * 40 : 138 + Math.random() * 56);
+  const estimatedHeight = image.kind === "shadow" ? width * 1.25 : width * 1.42;
+  const safeLeft = 12;
+  const safeTop = Math.min(108, Math.round(window.innerHeight * 0.18));
+  const maxLeft = Math.max(safeLeft, window.innerWidth - width - safeLeft);
+  const maxTop = Math.max(safeTop, window.innerHeight - estimatedHeight - 20);
+  const left = Math.round(safeLeft + Math.random() * (maxLeft - safeLeft));
+  const top = Math.round(safeTop + Math.random() * (maxTop - safeTop));
+  const tilt = `${(Math.random() * 10 - 5).toFixed(1)}deg`;
+
+  const sighting = document.createElement("figure");
+  sighting.className = `vampire-sighting vampire-sighting--${image.kind}`;
+  sighting.style.left = `${left}px`;
+  sighting.style.top = `${top}px`;
+  sighting.style.width = `${width}px`;
+  sighting.style.setProperty("--sighting-tilt", tilt);
+
+  const portrait = document.createElement("img");
+  portrait.src = image.src;
+  portrait.alt = "";
+  portrait.decoding = "async";
+  portrait.draggable = false;
+
+  const caption = document.createElement("figcaption");
+  caption.textContent = image.caption;
+  sighting.append(portrait, caption);
+
+  while (vampireSightings.children.length >= 2) {
+    vampireSightings.firstElementChild.remove();
+  }
+  vampireSightings.append(sighting);
+  window.setTimeout(() => sighting.remove(), 3400);
+}
 
 function updateScrollProgress() {
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+  const scrollY = window.scrollY;
+  const progress = scrollable > 0 ? Math.min(scrollY / scrollable, 1) : 0;
   progressBar.style.width = `${progress * 100}%`;
+
+  const parallaxDistance = Math.min(scrollY, 760);
+  const motionIsActive = page.dataset.motion === "on" && !reducedMotion.matches;
+  heroCopy.style.setProperty("--scroll-parallax", motionIsActive ? `${Math.round(parallaxDistance * 0.045)}px` : "0px");
+  heroArt.style.setProperty("--scroll-parallax", motionIsActive ? `${Math.round(parallaxDistance * 0.085)}px` : "0px");
+
+  if (Math.abs(scrollY - lastSightingScroll) >= 390 && Date.now() - lastSightingAt > 850) {
+    summonVampireSighting();
+    lastSightingScroll = scrollY;
+    lastSightingAt = Date.now();
+  }
+
   progressPending = false;
 }
 

@@ -8,6 +8,8 @@ Open a random door to reveal a new story and illustration. Watch the night move 
 
 - Eight original, bite-sized horror stories. Each visit to **Summon another story** picks a different one.
 - Locally generated SVG scenes—no image service, API key, external asset host, or tracking script.
+- Scroll-linked hero parallax and random Count Orlok sightings as you move down the page.
+- Locally bundled vampire artwork, with source and license details in [ASSETS.md](ASSETS.md).
 - A flying vampire, slow-moving bats and pumpkins, a foreground spider, drifting fog, and scroll-triggered reveals.
 - A motion pause button and support for the device's reduced-motion setting.
 - Responsive layout, keyboard focus styles, skip navigation, and screen-reader announcements.
@@ -50,6 +52,8 @@ Keep stories original, keep the page usable without motion, and keep the project
 | `index.html` | Page structure and accessible controls |
 | `styles.css` | Theme, responsive layout, and animation |
 | `script.js` | Story selection and SVG scene generation |
+| `assets/vampires/` | Locally bundled vampire artwork used in scroll sightings |
+| `ASSETS.md` | Artwork sources and license information |
 | `favicon.svg` | Project icon |
 | `vercel.json` | Static Vercel deployment settings |
 

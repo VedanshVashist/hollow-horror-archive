@@ -237,6 +237,7 @@ a:focus-visible {
 
 .hero-copy {
   padding-block: 10px 22px;
+  transform: translate3d(0, var(--scroll-parallax, 0px), 0);
 }
 
 .eyebrow {
@@ -372,6 +373,7 @@ h2 em {
   width: 100%;
   max-width: 770px;
   justify-self: end;
+  transform: translate3d(0, var(--scroll-parallax, 0px), 0);
 }
 
 .art-topline,
@@ -1084,6 +1086,62 @@ h2 em {
   overflow: hidden;
 }
 
+.vampire-sightings {
+  position: fixed;
+  z-index: 8;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.vampire-sighting {
+  position: absolute;
+  margin: 0;
+  padding: 7px;
+  border: 1px solid rgba(224, 214, 190, 0.6);
+  background: rgba(18, 16, 14, 0.88);
+  box-shadow: 0 14px 48px rgba(0, 0, 0, 0.56), 0 0 24px rgba(144, 46, 34, 0.16);
+  opacity: 0;
+  animation: vampire-sighting-emerge 3.2s cubic-bezier(0.18, 0.66, 0.26, 1) both;
+}
+
+.vampire-sighting img {
+  display: block;
+  width: 100%;
+  max-height: min(34vh, 360px);
+  object-fit: cover;
+  border: 1px solid rgba(233, 227, 215, 0.2);
+  filter: grayscale(0.92) sepia(0.16) contrast(1.14);
+}
+
+.vampire-sighting figcaption {
+  padding: 7px 3px 1px;
+  color: #c9d09b;
+  font-family: var(--mono);
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+
+.vampire-sighting--shadow {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.vampire-sighting--shadow img {
+  max-height: min(38vh, 380px);
+  object-fit: contain;
+  border: 0;
+  filter: invert(1) sepia(0.18) saturate(1.4) hue-rotate(320deg) drop-shadow(0 0 18px rgba(200, 88, 61, 0.55));
+  mix-blend-mode: screen;
+}
+
+.vampire-sighting--shadow figcaption {
+  text-shadow: 0 1px 6px #11100f;
+}
+
 .bat-crossing {
   position: absolute;
   top: 13vh;
@@ -1187,6 +1245,26 @@ h2 em {
 
 @keyframes ticker-roll {
   to { transform: translateX(-50%); }
+}
+
+@keyframes vampire-sighting-emerge {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translate3d(0, 15px, 0) scale(0.84) rotate(var(--sighting-tilt));
+  }
+
+  13%, 74% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate3d(0, 0, 0) scale(1) rotate(var(--sighting-tilt));
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translate3d(0, -12px, 0) scale(1.06) rotate(var(--sighting-tilt));
+  }
 }
 
 @keyframes signal-pulse {
@@ -1610,8 +1688,14 @@ h2 em {
   }
 
   .hauntings,
-  .spider-drop {
+  .spider-drop,
+  .vampire-sightings {
     display: none;
+  }
+
+  .hero-copy,
+  .hero-art-wrap {
+    transform: none;
   }
 }
 
